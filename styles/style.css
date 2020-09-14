@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&family=Roboto+Mono:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
 :root {
   --color-primary: #f5e1da;
-  --color-secondary: #ef6c57;
+  --color-secondary: #ceafa3;
   --color-terciary: #49beb7;
 }
 
@@ -70,7 +70,7 @@
       color: rgb(95, 94, 94); ;
   }
 
-    li a:hover {
+    .li-1:hover> a {
     color: rgb(95, 94, 94); 
     font-weight: bold;
 
@@ -187,11 +187,13 @@
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .que-hacemos-list-cards {
     background-color: #9b504436;
-    width: 45%;
+    width: 47%;
     margin: 1%;
     height: auto;
     padding: 10px;
@@ -228,6 +230,60 @@
     margin-right: 15px;
 }
 
+/* PEDIDOS */
+.pedidos-container {
+    padding: 5% 5% 5% 5%;
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(95, 94, 94);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.pedidos-form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+
+    -webkit-appearance: none;
+    margin: 0;
+
+}
+
+.pedidos-form-items {
+    margin-bottom: 1%;
+    border: solid var(--color-secondary) 1px;
+    border-radius: 5px;
+}
+
+.pedidos-form-items-file-label {
+    background-color: var(--color-secondary);
+    width: fit-content;
+    cursor: pointer;
+    padding: 1%;
+    border-radius: 5px;
+    margin-bottom: 1%;
+    color: rgb(95, 94, 94);
+}
+
+.pedidos-form-items-file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    }
+
+.pedidos-form-button {
+    border-radius: 5px;
+    border: none;
+    background-color: var(--color-secondary);
+    width: fit-content;
+    margin-top: 1%;
+    padding: 1%;
+    color:  rgb(95, 94, 94);
+}
+ 
 /* SKILS */
 
 /*SERVICES*/
