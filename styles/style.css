@@ -2,7 +2,7 @@
 :root {
   --color-primary: #f5e1da;
   --color-secondary: #ceafa3;
-  --color-terciary: #49beb7;
+  --color-terciary: #d8ece0;
 }
 
 /* ESTILOS GENERALES */
@@ -78,6 +78,7 @@
 
 .full-container {
   overflow-y: scroll; /*Con esta propiedas logramos que el eje y de nuestra pagina sea scrolleable */
+  overflow-x: hidden;
   scroll-behavior: smooth; /*Con esta propiedas logramos que las anclas de nuestra pagina se vean "suavizadas"*/
   width: 100%;
   height: 100%;
@@ -88,13 +89,13 @@
   height:485px;
   width: 100%;
   position: relative;
-  background-color: var(--color-primary);
+  background-color: var(--color-terciary);
 }
 
 .background-image {
   height: 485px;
   width: 1059px;
-  background-image: url("../imagenes/fondo1.png");
+  background-image: url("../imagenes/fondobanner.png");
   position: absolute;
   background-size: cover
 }
