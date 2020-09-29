@@ -323,9 +323,32 @@ input[type=number]::-webkit-inner-spin-button {
   opacity: 0.9;
 }
 
-/* CONTACTME */
-
 /* FOOTER */
+.footer {
+    background-color: var(--color-terciary);
+    overflow-x: hidden;
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(80, 80, 80);
+    padding: 5%;
+}
+
+.contacto-container {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.contacto-info {
+    flex: 1 1 auto;
+    
+}
+
+.contacto-ubicacion {
+    flex: 1 1 auto;
+}
+
+.contacto-title {
+    margin: 0px;
+}
 
 /* RESPONSIVE */
 @media (max-width: 1000px) {
