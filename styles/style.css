@@ -496,6 +496,11 @@ h3 {
   height: auto;
 }
 
+.imagen-laboratorio2 {
+  width: 48%;
+  height: auto;
+}
+
 /* RESPONSIVE */
 @media (max-width: 1000px) {
   .container {
