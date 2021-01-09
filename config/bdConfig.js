@@ -13,6 +13,6 @@ conexion_db.connect((err)=>{
     }else{
         console.log('conexion exitosa');
     }
-})
+});
 
-module.exports = conexion_db
+// module.exports = conexion_db

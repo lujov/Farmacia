@@ -6,8 +6,14 @@ productosRouter.get('/',producto_controller.obtenerProducto);
 
 productosRouter.post('/productos', producto_controller.agregarProductos);
 
-productosRouter.put('/productos/:producto',producto_controller.editarProducto);
+productosRouter.put('/productos/:nombre',producto_controller.editarNombreProducto);
 
-productosRouter.delete('/productos/:producto',producto_controller.eliminarProducto);
+productosRouter.put('/productos/:precio',producto_controller.editarPrecioProducto);
+
+productosRouter.put('/productos/:categoria',producto_controller.editarCategoriaProducto);
+
+productosRouter.put('/productos/:id',producto_controller.editarIdProducto);
+
+productosRouter.delete('/productos/eliminar/:producto',producto_controller.eliminarProducto);
 
 module.exports = productosRouter;
