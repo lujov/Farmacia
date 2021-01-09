@@ -42,43 +42,81 @@ a:hover {
     height: auto;
 }
 
-.nombre-nav {
-    font-size: 28px;
-    margin: 0px 0px 103px 0px;
-  }
+    /* Menu 1 */
 
-   .lista-1 {
-     list-style: none;
-     font-size: 16px;
-     padding: 0px 15px;
-     
-  }
+    .nombre-nav {
+      font-size: 28px;
+      margin: 0px 0px 103px 0px;
+    }
+
+    .lista-1 {
+      list-style: none;
+      font-size: 16px;
+      padding: 0px 15px;
+    }
 
 
-   .li-1 {
-     height: 32px;
-     padding-top: 8px;
-     margin: 4px 0px 4px 0px;
-     box-sizing: border-box;
-     transition: border-left 1s;
-  }
+    .li-1 {
+      height: 32px;
+      padding-top: 8px;
+      margin: 4px 0px 4px 0px;
+      box-sizing: border-box;
+      transition: border-left 1s;
+    }
 
-   a:link, a:visited, a:active {
-    text-decoration: none;
-    color:rgb(110, 110, 110);
-  }
+    a:link, a:visited, a:active {
+      text-decoration: none;
+      color:rgb(110, 110, 110);
+    }
 
-  .li-1:hover {
-      border-left: solid #ceafa3 8px;
+    .li-1:hover {
+        border-left: solid #ceafa3 8px;
+        padding-left: 2%;
+        color: rgb(95, 94, 94); ;
+    }
+
+      .li-1:hover> a {
+      color: rgb(95, 94, 94); 
+      font-weight: bold;
+
+    }
+    
+    /* Menu 2 */
+    .navbar-divisor{
+      border: solid #ceafa3 1px ;
+
+    }
+
+    .lista-2 {
+      list-style: none;                                                                                                                                                                                                                                                                     
+      font-size: 16px;
+      padding: 0px 15px;
+    }
+
+    .li-2 {
+      height: 32px;
+      padding-top: 8px;
+      margin: 4px 0px 4px 0px;
+      box-sizing: border-box;
+      transition: border-left 1s;
+    }
+
+    .li-2:hover {
+      border-left: solid #d8ece0 8px;
       padding-left: 2%;
       color: rgb(95, 94, 94); ;
   }
 
-    .li-1:hover> a {
+    .li-2:hover> a {
     color: rgb(95, 94, 94); 
     font-weight: bold;
 
   }
+
+
+  /* FIN NAVBAR */
+
+  /* INICIO CONTAINER GENERAL */
 
 .full-container {
   overflow-y: scroll; /*Con esta propiedas logramos que el eje y de nuestra pagina sea scrolleable */
@@ -494,6 +532,27 @@ h3 {
 .imagen-laboratorio1 {
   width: 48%;
   height: auto;
+}
+
+/* TIENDA */
+
+.tienda-title{
+  font-family: 'Roboto Mono', monospace;
+  color: rgb(95, 94, 94);
+  text-align: center;
+  font-size: 3rem;
+}
+
+.tienda-menu{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1% 0% 1% 0%;
+  background-color: var(--color-secondary);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.2rem;
+  color: rgb(95, 94, 94);
 }
 
 /* RESPONSIVE */
