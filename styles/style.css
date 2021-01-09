@@ -17,6 +17,10 @@
   overflow: hidden; /*Con esta propiedas ocultamos el contenido que se va fuera del viewport */
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 /* NAVBAR */
 .navbar-container__mobile {
   display: none;
@@ -61,7 +65,7 @@
 
    a:link, a:visited, a:active {
     text-decoration: none;
-    color:rgb(133, 132, 132);
+    color:rgb(110, 110, 110);
   }
 
   .li-1:hover {
@@ -206,8 +210,8 @@
     width: 100%;
 }
 
-.que-hacemos-list-cards {
-    background-color: #9b504436;
+.que-hacemos-list a {
+   background-color: #9b504436;
     width: 47%;
     margin: 1%;
     height: auto;
@@ -215,6 +219,11 @@
     border-radius: 5px;
     box-shadow: 2px 4px 4px 2px rgba(3, 3, 3, 0.274); 
     border: solid white 1px ;
+}
+
+.que-hacemos-list a:hover {
+  cursor: pointer;
+  background-color: #d8ece0;
 }
 
 .fa-capsules {
@@ -345,6 +354,9 @@ input[type=number]::-webkit-inner-spin-button {
     flex: 1 1 auto;
     width: 100%;
     margin-right: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     
 }
 
@@ -437,6 +449,51 @@ h3 {
 
 .ubicacion-title {
     margin-top: 0%;
+}
+
+/* LABORATORIO */
+
+.laboratorio-content {
+    padding: 3% 5% 4% 5%;
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(95, 94, 94);
+    width: 100%;
+    text-align : justify;
+}
+
+.laboratorio-title {
+  margin-left: 5%;
+  margin-bottom: 0;
+  color: rgb(95, 94, 94);
+  font-family: 'Roboto Mono', monospace;
+}
+
+.lab-content1 {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: auto;
+  box-sizing: border-box;
+  height: fit-content;
+  margin-bottom: 3%;
+}
+
+.lab-content1-parr {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+}
+
+.lab-content1-parr p {
+  margin: 0%;
+}
+
+.imagen-laboratorio1 {
+  width: 48%;
+  height: auto;
 }
 
 /* RESPONSIVE */
