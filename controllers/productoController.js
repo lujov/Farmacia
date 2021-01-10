@@ -11,9 +11,9 @@ const obtenerProducto = (req,res)=>{
 
 const agregarProductos = (req,res)=>{
     //destructuring
-    let {id_producto,nombre,precio,categoria} = req.body;
+    let {id_producto,nombre,precio,categoria,stock} = req.body;
     // console.log(req.body)
-    conexion_db.query('INSERT INTO `t_productos`(`id_producto`,`nombre`, `precio`,`categoria`) VALUES (?,?)',[id_producto,nombre,precio,categoria],(err,results)=>{
+    conexion_db.query('INSERT INTO `t_productos`(`id_producto`,`nombre`, `precio`,`categoria`,`stock`) VALUES (?,?)',[id_producto,nombre,precio,categoria],(err,results)=>{
         if(err)
         throw err;
         res.send('Datos enviados con exito!');
@@ -68,6 +68,18 @@ const editarIdProducto =(req,res)=>{
     })
 }
 
+const editarStockProducto =(req,res)=>{
+
+    //destructuring
+    let {stock} = req.params;
+
+    conexion_db.query('UPDATE `t_productos` SET `stock`= ? WHERE stock = ?',[req.body.stock,stock],(err,results)=>{
+        if(err)
+        throw err;
+    res.send('Stock de producto editado con exito!');
+    })
+}
+
 const eliminarProducto = (req,res)=>{
     //destructuring
     let {id_producto} = req.params;
@@ -86,5 +98,6 @@ module.exports = {
     editarNombreProducto,
     editarPrecioProducto,
     editarCategoriaProducto,
-    editarIdProducto
+    editarIdProducto,
+    editarStockProducto
 }

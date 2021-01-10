@@ -14,6 +14,8 @@ productosRouter.put('/productos/:categoria',producto_controller.editarCategoriaP
 
 productosRouter.put('/productos/:id',producto_controller.editarIdProducto);
 
+productosRouter.put('/productos/:id',producto_controller.editarStockProducto);
+
 productosRouter.delete('/productos/eliminar/:producto',producto_controller.eliminarProducto);
 
 module.exports = productosRouter;
