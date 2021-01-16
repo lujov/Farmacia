@@ -489,6 +489,49 @@ h3 {
     margin-top: 0%;
 }
 
+/* MODAL */
+
+.modal-header{
+  background-color: var(--color-primary);
+}
+
+.input-modal{
+    border: solid 1px  rgb(80, 80, 80); ;
+    outline: none;
+    transition: border-bottom 0.5s ease-in-out;
+    border-radius: 2px;
+}
+
+.input-modal:focus {
+  border-bottom: solid var(--color-secondary) 3px;
+}
+
+.modal-footer{
+  background-color: var(--color-primary);
+  box-sizing: border-box; 
+}
+
+.btn-secondary{
+  background-color: var(--color-secondary);
+  border: none;
+  /* box-shadow: 2px 4px 4px 2px rgba(3, 3, 3, 0.274); */
+}
+
+.btn-success{
+  background-color: var(--color-terciary);
+  border: none;
+  color: rgb(80, 80, 80); 
+  box-shadow: 2px 4px 4px 2px rgba(3, 3, 3, 0.185);
+  margin-left: 50px;
+}
+
+.btn-success:hover{
+  background-color:var(--color-terciary);
+  /* border: solid 1px var(--color-secondary); */
+  color: rgb(80, 80, 80);
+  transform: scale(1.05);
+}
+
 /* LABORATORIO */
 
 .laboratorio-content {
