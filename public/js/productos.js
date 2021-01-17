@@ -16,28 +16,28 @@ function mostrarProductos(data){
     })
 }
 
-// let formulario_product = document.querySelector('#formulario-producto');
-
-// function enviarDatos(e){
-//     e.preventDefault();
-//     let nombre = document.querySelector('#nombre').value;
-//     let precio = document.querySelector('#precio').value;
-//     let id_producto = document.querySelector('#id_producto').value;
-//     let categoria = document.querySelector('#categoria').value;
-//     let stock = document.querySelector('#stock').value;
+// agrega productos a la tienda
+function enviarDatos(e){
+    e.preventDefault();
+    let nombre = document.querySelector('#nombre').value;
+    let precio = document.querySelector('#precio').value;
+    let id_producto = document.querySelector('#id_producto').value;
+    let categoria = document.querySelector('#categoria').value;
+    let stock = document.querySelector('#stock').value;
     
-//     axios.post('http://localhost:8888/gestorproductos/productos',{
-//         nombre: nombre,
-//         precio: precio,
-//         id_producto: id_producto,
-//         categoria: categoria,
-//         stock: stock
-//     })
-//     alert('datos enviados');
-//     window.location = 'lista-productos.html';
-// }
+    axios.post('http://localhost:3306/gestorproductos/productos',{
+        nombre: nombre,
+        precio: precio,
+        id_producto: id_producto,
+        categoria: categoria,
+        stock: stock
+    })
+    alert('datos enviados');
+    // window.location = 'tienda.html';
+}
 
-// formulario_product.addEventListener('submit',enviarDatos);
+let formulario_product = document.querySelector('#btn-subir-producto');
+formulario_product.addEventListener('click',enviarDatos);
 
 // function eliminarProducto(e){
 // console.log(e.path[1].childNodes[0].innerText);
