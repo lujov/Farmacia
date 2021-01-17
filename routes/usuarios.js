@@ -2,20 +2,20 @@ const express = require('express');
 const usuario_controller = require('../controllers/usuarioController');
 const usuariosRouter = express.Router();
 
-productosRouter.get('/',usuario_controller.obtenerUsuario);
+usuariosRouter.get('/',usuario_controller.obtenerUsuario);
 
-productosRouter.post('/usuarios', usuario_controller.registrarUsuario);
+usuariosRouter.post('/usuarios', usuario_controller.registrarUsuario);
 
-productosRouter.put('/usuarios/:nombre',usuario_controller.editarNombreUsuario);
+usuariosRouter.put('/usuarios/:nombre',usuario_controller.editarNombreUsuario);
 
-productosRouter.put('/usuarios/:telefono',usuario_controller.editarTelefonoUsuario);
+usuariosRouter.put('/usuarios/:telefono',usuario_controller.editarTelefonoUsuario);
 
-productosRouter.put('/usuarios/:direccion',usuario_controller.editarDireccionUsuario);
+usuariosRouter.put('/usuarios/:direccion',usuario_controller.editarDireccionUsuario);
 
-productosRouter.put('/usuarios/:mail',usuario_controller.editarMailUsuario);
+usuariosRouter.put('/usuarios/:mail',usuario_controller.editarMailUsuario);
 
-productosRouter.put('/usuarios/:dni',usuario_controller.editarDniUsuario);
+usuariosRouter.put('/usuarios/:dni',usuario_controller.editarDniUsuario);
 
-productosRouter.delete('/usuarios/eliminar/:usuario',usuario_controller.eliminarUsuario);
+usuariosRouter.delete('/usuarios/eliminar/:usuario',usuario_controller.eliminarUsuario);
 
 module.exports = usuariosRouter;

@@ -4,7 +4,8 @@ const conexion_db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password:'',
-    database: 'bd_productos'
+    database: 'bd_productos',
+    port:3306
 });
 
 conexion_db.connect((err)=>{
@@ -15,4 +16,4 @@ conexion_db.connect((err)=>{
     }
 });
 
-// module.exports = conexion_db
+module.exports = conexion_db

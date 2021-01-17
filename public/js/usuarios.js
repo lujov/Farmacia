@@ -17,7 +17,7 @@
 //     })
 // }
 
-
+// -------REGISTRO DE USUARIOS-------
 
 let formulario_product = document.querySelector('#formulario-registro');
 
@@ -42,13 +42,15 @@ function enviarDatosUsuario(e){
 
 formulario_product.addEventListener('submit',enviarDatosUsuario);
 
-function eliminarUsuario(e){
-console.log(e.path[1].childNodes[0].innerText);
-let usuarioEliminado = e.path[1].childNodes[0].innerText;
-    axios.delete(`http://localhost:8888/gestorusuarios/usuarios/${usuarioEliminado}`)
-    .then(()=>{
-        alert('Usuario Eliminado');
-        location.reload();
-    })
-}
+
+
+// function eliminarUsuario(e){
+// console.log(e.path[1].childNodes[0].innerText);
+// let usuarioEliminado = e.path[1].childNodes[0].innerText;
+//     axios.delete(`http://localhost:8888/gestorusuarios/usuarios/${usuarioEliminado}`)
+//     .then(()=>{
+//         alert('Usuario Eliminado');
+//         location.reload();
+//     })
+// }
 

@@ -11,6 +11,6 @@ app.use(express.urlencoded({extended:true})); // permite interprete los datos qu
 app.use('/gestorproductos',productosRouter);
 app.use('/gestorusuarios',usuariosRouter);
 
-app.listen(8888,()=>{
-    console.log('escuchando en el puerto 8888');
+app.listen(3306,()=>{
+    console.log('escuchando en el puerto 3306');
 });
