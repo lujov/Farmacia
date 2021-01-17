@@ -632,6 +632,32 @@ h3 {
   color: rgb(95, 94, 94);
 }
 
+.tienda-productos{
+  padding: 4%;
+  box-sizing: border-box;
+}
+
+.productos{
+  width: 25%;
+  height: auto;
+  box-shadow: 2px 4px 4px 2px rgba(3, 3, 3, 0.336);
+  font-family: 'Roboto Mono', monospace;
+  color: rgb(95, 94, 94);
+  text-align: center;
+  padding: 2%;
+  box-sizing: border-box;
+}
+
+.productos:hover{
+  border: solid 3px var(--color-primary);
+}
+
+.img-productos{
+  width: 100%;
+  height: 200px;
+  background-color: #f5e1da;
+}
+
 /* RESPONSIVE */
 @media (max-width: 1000px) {
   .container {
