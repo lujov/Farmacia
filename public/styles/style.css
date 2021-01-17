@@ -632,13 +632,18 @@ h3 {
   color: rgb(95, 94, 94);
 }
 
-.tienda-productos{
-  padding: 4%;
+#tienda-productos{
+  padding: 2%;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items:;
 }
 
 .productos{
-  width: 25%;
+  width: 22%;
   height: auto;
   box-shadow: 2px 4px 4px 2px rgba(3, 3, 3, 0.336);
   font-family: 'Roboto Mono', monospace;
@@ -646,16 +651,35 @@ h3 {
   text-align: center;
   padding: 2%;
   box-sizing: border-box;
+  margin:1% ;
 }
 
-.productos:hover{
-  border: solid 3px var(--color-primary);
+.productos:hover .nombre-productos{
+  color: var(--color-secondary);
+}
+
+.productos h3 {
+  border: none;
+}
+
+.productos:hover .boton-productos{
+  background-color: var(--color-secondary);
+}
+
+.boton-productos{
+  border: none;
+  padding: 2%;
+  border-radius: 6px;
 }
 
 .img-productos{
   width: 100%;
   height: 200px;
-  background-color: #f5e1da;
+  background-color: #f7f4f3;
+}
+
+.boton-productos:hover{
+  background-color: var(--color-primary);
 }
 
 /* RESPONSIVE */
