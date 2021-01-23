@@ -4,7 +4,7 @@ const productosRouter = express.Router();
 
 productosRouter.get('/',producto_controller.obtenerProducto);
 
-productosRouter.post('/productos', producto_controller.agregarProductos);
+productosRouter.post('/productos',producto_controller.agregarProductos);
 
 productosRouter.put('/productos/:nombre',producto_controller.editarNombreProducto);
 

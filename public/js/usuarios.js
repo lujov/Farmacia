@@ -1,35 +1,14 @@
-// function peticionUsuarios(){
-//     axios.get('http://localhost:8888/gestorusuarios')
-//     .then((response)=>{
-//         mostrarUsuarios(response.data);  
-//     })
-// }
-
-// peticionUsuarios();
-
-// // muestra los productos en la tienda
-// function mostrarProductos(data){
-//     let lista_product = document.querySelector('#lista-productos');
-
-//     // VER SEGUN HTML
-//     data.forEach((item)=>{
-//         lista_product.innerHTML+= `<li><span>${item.nombre}</span> || <span>${item.precio}</span> || <button onclick="eliminarProducto(event)">Eliminar</button></li>`;
-//     })
-// }
-
 // -------REGISTRO DE USUARIOS-------
-
-let formulario_product = document.querySelector('#formulario-registro');
 
 function enviarDatosUsuario(e){
     e.preventDefault();
-    let nombre = document.querySelector('#nombre').value;
+    let nombre = document.querySelector('#nombre-apellido').value;
     let telefono = document.querySelector('#telefono').value;
-    let direccion = document.querySelector('#id_direccion').value;
+    let direccion = document.querySelector('#direccion').value;
     let mail = document.querySelector('#mail').value;
     let dni = document.querySelector('#dni').value;
     
-    axios.post('http://localhost:8888/gestorusuarios/usuarios',{
+    axios.post('http://localhost:3306/registro',{
         nombre: nombre,
         telefono: telefono,
         direccion: direccion,
@@ -40,7 +19,8 @@ function enviarDatosUsuario(e){
     window.location = 'index.html';
 }
 
-formulario_product.addEventListener('submit',enviarDatosUsuario);
+let formulario_registro = document.querySelector('#guardar');
+formulario_registro.addEventListener('click',enviarDatosUsuario);
 
 
 

@@ -145,7 +145,7 @@
                 <div class="modal-body">
                     <form class="agregar-produc-form" action="" method="">
                         <label for="name">Nombre y apellido:</label><br>
-                        <input class="input-modal" type="text" id="nombre" name="name"><br>
+                        <input class="input-modal" type="text" id="nombre-apellido" name="name"><br>
 
                         <label for="contraseña">Contraseña:</label><br>
                         <input class="input-modal" type="password" id="constraseña" name="contraseña"><br>
@@ -159,8 +159,8 @@
                         <label for="direccion">Dirección:</label><br>
                         <input class="input-modal" type="text" id="direccion" name="direccion"><br>
                     
-                        <label for="Precio">Mail:</label><br>
-                        <input class="input-modal" type="text" id="precio" name="precio"><br>
+                        <label for="mail">Mail:</label><br>
+                        <input class="input-modal" type="text" id="mail" name="precio"><br>
 
                         <label for="dni">DNI:</label><br>
                         <input class="input-modal" type="number" id="dni" name="dni"><br>
@@ -169,7 +169,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-success" onclick="guardarProducto(event)" id="guardar">Guardar</button>
+                    <button type="button" class="btn btn-success" id="guardar">Guardar</button>
                 </div>
             </div>
         </div>
@@ -202,12 +202,11 @@
         </div>
     </div>
 
+    <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
     <script src="https://kit.fontawesome.com/7aa36192fa.js" crossorigin="anonymous"></script>
     <script type="application/javascript">
         jQuery('input[type=file]').change(function(){
@@ -219,5 +218,8 @@
         jQuery('span.'+idname).next().find('span').html(filename);
         });
     </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/usuarios.js"></script>
 </body>
 </html>

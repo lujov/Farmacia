@@ -12,8 +12,16 @@ function mostrarProductos(data){
     let lista_product = document.querySelector('#tienda-productos');
 
     data.forEach((item)=>{
-        lista_product.innerHTML = `<div class="producto"><ul><li>${item.nombre}</li><li>${item.precio}</li></ul></div>`;
+        lista_product.insertAdjacentHTML("afterbegin",`
+        <div class="productos">
+        <img class="img-productos" src="/imagenes/imagen-1.jpg" alt="">
+        <h3 class="nombre-productos">${item.nombre}</h3>
+        <h3 class="precio-productos">${item.precio}</h3>
+        <button class="boton-productos">Agregar al carrito</button>
+        </div>
+        `);
     })
+
 }
 
 // agrega productos a la tienda
@@ -26,9 +34,9 @@ function enviarDatos(e){
     let stock = document.querySelector('#stock').value;
     
     axios.post('http://localhost:3306/gestorproductos/productos',{
+        id_producto: id_producto,
         nombre: nombre,
         precio: precio,
-        id_producto: id_producto,
         categoria: categoria,
         stock: stock
     })

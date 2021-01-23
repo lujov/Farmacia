@@ -12,8 +12,7 @@ const obtenerProducto = (req,res)=>{
 const agregarProductos = (req,res)=>{
     //destructuring
     let {id_producto,nombre,precio,categoria,stock} = req.body;
-    // console.log(req.body)
-    conexion_db.query('INSERT INTO `t_productos`(`id_producto`,`nombre`, `precio`,`categoria`,`stock`) VALUES (?,?)',[id_producto,nombre,precio,categoria,stock],(err,results)=>{
+    conexion_db.query('INSERT INTO `t_productos`(`id_producto`,`nombre`, `precio`,`categoria`,`stock`) VALUES (?,?,?,?,?)',[id_producto,nombre,precio,categoria,stock],(err,results)=>{
         if(err)
         throw err;
         res.send('Datos enviados con exito!');
