@@ -638,8 +638,8 @@ h3 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items:;
+  /* justify-content: space-between; */
+  /* align-items: */
 }
 
 .productos{
@@ -652,6 +652,7 @@ h3 {
   padding: 2%;
   box-sizing: border-box;
   margin:1% ;
+  transition: all 1s;
 }
 
 .productos:hover .nombre-productos{
