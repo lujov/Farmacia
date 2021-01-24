@@ -611,6 +611,35 @@ h3 {
   margin-right: 4.5%;
 }
 
+/* CARRITO */
+
+.carrito{
+  width: 5%;
+  height: 6%;
+  background-color: var(--color-secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 5%;
+  right: 2%;
+  border-radius: 6px;
+  border: solid 2.5px gray;
+}
+
+.carrito:hover{
+  background-color: var(--color-terciary);
+}
+
+.carrito:hover .fa-shopping-cart{
+  color: gray;
+}
+
+.fa-shopping-cart{
+  font-size: 1.5rem;
+  color: rgb(83, 83, 83);
+}
+
 /* TIENDA */
 
 .tienda-title{
@@ -681,6 +710,21 @@ h3 {
 
 .boton-productos:hover{
   background-color: var(--color-primary);
+}
+
+/* CARRITO */
+
+.carrito-subtitulo{
+  text-align: center;
+  padding: 5px 0px 5px 0px;
+  background-color: var(--color-secondary);
+  font-family: 'Roboto Mono', monospace;
+  /* font-size: 1.2rem; */
+  color: rgb(95, 94, 94);
+}
+
+.carrito-subtitulo h2{
+  margin: 0;
 }
 
 /* RESPONSIVE */
