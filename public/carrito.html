@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/style.css">
     <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <title>Tienda online</title>
+    <title>Carrito</title>
 </head>
 <body>
     <div class="main-container">
@@ -23,26 +24,78 @@
             </ul>
             <div class="navbar-divisor"></div>
             <ul class="lista-2">
-                <li class="li-2"><a href="#compras">Tienda online</a></li>
-                <li class="li-2"><a href="#registro">Registrarse</a></li>
-                <li class="li-2"><a href="#inicio-se">Iniciar sesión</a></li>
+                <li class="li-2"><a href="tienda.html" target="_blank">Tienda online</a></li>
+                <li class="li-2"><a href="" data-toggle="modal" data-target="#exampleModal">Registrarse</a></li>
+                <li class="li-2"><a href="" data-toggle="modal" data-target="#exampleInicio">Iniciar sesión</a></li>
             </ul>
-            <!-- CONTAINER -->
         </section>
+        <!-- CONTAINER -->
         <div class="full-container">
-            <h1 class="tienda-title">CARRITO</h1>
+            <h1 class="tienda-title">CARRITO <i class="fas fa-shopping-cart"></i></h1>
             <div class="carrito-subtitulo">
                 <h2>TUS PRODUCTOS</h2>
             </div>
-            <form action="">
-                <input type="text" id="nombre" placeholder="nombre"><br>
-                <input type="text" id="precio" placeholder="precio"><br>
-                <input type="text" id="id_producto" placeholder="id"><br>
-                <input type="text" id="categoria" placeholder="categoria"><br>
-                <input type="text" id="stock" placeholder="stock"><br>
-                <button id="btn-subir-producto">Subir</button>
-            </form>
-
+            <section class="section-tabla-carrito">
+                <table class="table" id="table">
+                   <thead class="tabla-encabezado">
+                       <tr class="tabla-encabezado2">
+                           <th>PRODUCTO</th>
+                           <th>DESCRIPCION</th>
+                           <th>CANTIDAD</th>
+                           <th>PRECIO</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td class="img-carrito-container"><img class="img-prod-carrito" src="imagenes/producto.jpg" alt=""></td>
+                           <td><p>NOMBRE DEL PRODUCTO</p></td>
+                           <td>
+                               <div class="carrito-cantidad">
+                                    <input type="number" id="quantity" name="quantity" min="1" max="10"> 
+                               </div>
+                           </td>
+                           <td>
+                               <span class="carrito-precio">$1350</span>
+                           </td>
+                       </tr>
+                       <tr>
+                        <td class="img-carrito-container"><img class="img-prod-carrito" src="imagenes/producto.jpg" alt=""></td>
+                        <td><p>NOMBRE DEL PRODUCTO</p></td>
+                        <td>
+                            <div class="carrito-cantidad">
+                                 <input type="number" id="quantity" name="quantity" min="1" max="10"> 
+                            </div>
+                        </td>
+                        <td>
+                            <span class="carrito-precio">$1350</span>
+                        </td>
+                    </tr>
+                   </tbody>
+                   <tfoot>
+                   </tfoot>
+                </table>
+                <div class="datos-compra">
+                    <p class="datos-compra-titulo">DETALLES DEL PEDIDO</p>
+                    <table class="datos-compra-tabla">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Total de la orden</td>
+                                <td>$3640</td>
+                            </tr>
+                            <tr>
+                                <td>Costo de envío</td>
+                                <td>$320</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
             <!-- Inicio footer -->
             <footer class="footer" id="contacto">
                 <h2 class="contacto-title">Contacto</h2>
@@ -73,9 +126,92 @@
             </footer>
         </div>
     </div>
+     <!-- Modal registro -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Registrate!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="limpiarForm()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="agregar-produc-form" action="" method="">
+                        <label for="name">Nombre y apellido:</label><br>
+                        <input class="input-modal" type="text" id="nombre-apellido" name="name"><br>
+
+                        <label for="contraseña">Contraseña:</label><br>
+                        <input class="input-modal" type="password" id="constraseña" name="contraseña"><br>
+
+                        <label for="confirm-contraseña">Confirmar contraseña:</label><br>
+                        <input class="input-modal" type="password" id="confirm-constraseña" name="confirm-contraseña"><br>
+                    
+                        <label for="telefono">Telefono de contacto:</label><br>
+                        <input class="input-modal" type="number" id="telefono" name="telefono"><br>
+
+                        <label for="direccion">Dirección:</label><br>
+                        <input class="input-modal" type="text" id="direccion" name="direccion"><br>
+                    
+                        <label for="mail">Mail:</label><br>
+                        <input class="input-modal" type="text" id="mail" name="precio"><br>
+
+                        <label for="dni">DNI:</label><br>
+                        <input class="input-modal" type="number" id="dni" name="dni"><br>
+                    </form>
+                    <span id="error-modal"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" id="guardar">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Modal inicio sesión -->
+<div class="modal fade" id="exampleInicio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Inicia sesión!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="limpiarForm()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="agregar-produc-form" action="" method="">
+                    <label for="Precio">Mail:</label><br>
+                    <input class="input-modal" type="text" id="precio" name="precio"><br>
+
+                    <label for="contraseña">Contraseña:</label><br>
+                    <input class="input-modal" type="password" id="constraseña" name="contraseña"><br>
+                </form>
+                <span id="error-modal"></span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" onclick="guardarProducto(event)" id="guardar">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/7aa36192fa.js" crossorigin="anonymous"></script>
+<script type="application/javascript">
+    jQuery('input[type=file]').change(function(){
+    var filename = jQuery(this).val().split('\\').pop();
+    var idname = jQuery(this).attr('id');
+    console.log(jQuery(this));
+    console.log(filename);
+    console.log(idname);
+    jQuery('span.'+idname).next().find('span').html(filename);
+    });
+</script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="js/productos.js"></script>
