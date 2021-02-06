@@ -1,0 +1,27 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>Bienvenido/a {{user.nombre}}</h3>
+                    <h5>Información de usuario:</h5>
+                    <form action="/editarusuario/{{user.id_usuario}}" method="POST">
+                        <label for="name">Nombre y apellido:</label><br>
+                        <input type="text" name="nombre" id="nombre" value="{{user.nombre}}"><br>
+                        <label for="telefono">Telefono de contacto:</label><br>
+                        <input type="number" name="telefono" id="telefono" value="{{user.telefono}}"><br>
+                        <label for="direccion">Dirección:</label><br>
+                        <input type="text" name="direccion" id="direccion" value="{{user.direccion}}"><br>
+                        <label for="mail">Mail:</label><br>
+                        <input type="mail" name="mail" id="mail" value="{{user.mail}}"><br>
+                        <label for="dni">DNI:</label><br>
+                        <input type="number" name="dni" id="dni" value="{{user.dni}}"><br>
+                        <label for="contrasena">Contraseña:</label><br>
+                        <input type="password" name="contrasena" id="contrasena" value="{{user.contrasena}}"><br>
+                        <button id="btn-subir-producto">Editar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,95 @@
+<!-- NAVBAR -->
+<section class="navbar-container__desktop">
+    <img class="img-logo" src="/imagenes/Logo Etiquetas 3.png" alt="logo">
+    <ul class="lista-1">
+        <li class="li-1"><a href="/">Home</a></li>
+        <li class="li-1"><a href="/#quienes-somos">Quienes somos</a></li>
+        <li class="li-1"><a href="/#que-hacemos">Que hacemos</a></li>
+        {{!-- <li class="li-1"><a href="#works">Noticias</a></li> --}}
+        <li class="li-1"><a href="/#pedidos">Pedidos</a></li>
+        <li class="li-1"><a href="/#contacto">Contacto</a></li>
+    </ul>
+    <div class="navbar-divisor"></div>
+    <ul class="lista-2">
+        <li class="li-2"><a href="/tienda">Tienda online</a></li>
+
+        {{!-- estas funciones solo aparecen cuando no hay un usuario logueado --}}
+        {{#if user}}
+            <li class="li-2"><a href="/perfil">Perfil</a></li>
+            <li class="li-2"><a href="/cerrarsesion">Cerrar sesión</a></li>
+        {{else}}
+            <li class="li-2"><a href="" data-toggle="modal" data-target="#exampleModal">Registrarse</a></li>
+            <li class="li-2"><a href="" data-toggle="modal" data-target="#exampleInicio">Iniciar sesión</a></li>
+        {{/if}}
+    </ul>
+</section>
+
+<!-- Modal registro -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Registrate!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="limpiarForm()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="agregar-produc-form" action="/registro" method="POST">
+                    <label for="name">Nombre y apellido:</label><br>
+                    <input class="input-modal" type="text" id="nombre-apellido" name="nombre" autofocus><br>
+
+                    <label for="contrasena">Contraseña:</label><br>
+                    <input class="input-modal" type="password" id="constrasena" name="contrasena"><br>
+
+                    <label for="confirm-contrasena">Confirmar contraseña:</label><br>
+                    <input class="input-modal" type="password" id="confirm-constrasena" name="confirm-contrasena"><br>
+                
+                    <label for="telefono">Telefono de contacto:</label><br>
+                    <input class="input-modal" type="number" id="telefono" name="telefono"><br>
+
+                    <label for="direccion">Dirección:</label><br>
+                    <input class="input-modal" type="text" id="direccion" name="direccion"><br>
+                
+                    <label for="mail">Mail:</label><br>
+                    <input class="input-modal" type="text" id="mail" name="mail"><br>
+
+                    <label for="dni">DNI:</label><br>
+                    <input class="input-modal" type="number" id="dni" name="dni"><br>
+
+                    <span id="error-modal"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="sumbit" class="btn btn-success">Guardar</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Modal inicio sesión -->
+<div class="modal fade" id="exampleInicio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Inicia sesión!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="limpiarForm()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="agregar-produc-form" action="/iniciosesion" method="POST">
+                    <label for="mail">Mail:</label><br>
+                    <input class="input-modal" type="text" id="mail" name="mail"><br>
+                    <label for="contrasena">Contraseña:</label><br>
+                    <input class="input-modal" type="password" id="constrasena" name="contrasena"><br>
+                    <span id="error-modal"></span>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="sumbit" class="btn btn-success">Aceptar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

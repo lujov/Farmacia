@@ -1,0 +1,65 @@
+<h1 class="tienda-title">CARRITO <i class="fas fa-shopping-cart"></i></h1>
+    <div class="carrito-subtitulo">
+        <h2>TUS PRODUCTOS</h2>
+    </div>
+    <section class="section-tabla-carrito">
+        <table class="table" id="table">
+            <thead class="tabla-encabezado">
+                <tr class="tabla-encabezado2">
+                    <th>PRODUCTO</th>
+                    <th>DESCRIPCION</th>
+                    <th>CANTIDAD</th>
+                    <th>PRECIO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="img-carrito-container"><img class="img-prod-carrito" src="imagenes/producto.jpg" alt=""></td>
+                    <td><p>NOMBRE DEL PRODUCTO</p></td>
+                    <td>
+                        <div class="carrito-cantidad">
+                            <input type="number" id="quantity" name="quantity" min="1" max="10"> 
+                        </div>
+                    </td>
+                    <td>
+                        <span class="carrito-precio">$1350</span>
+                    </td>
+                </tr>
+                <tr>
+                <td class="img-carrito-container"><img class="img-prod-carrito" src="imagenes/producto.jpg" alt=""></td>
+                <td><p>NOMBRE DEL PRODUCTO</p></td>
+                <td>
+                    <div class="carrito-cantidad">
+                            <input type="number" id="quantity" name="quantity" min="1" max="10"> 
+                    </div>
+                </td>
+                <td>
+                    <span class="carrito-precio">$1350</span>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+        <div class="datos-compra">
+            <p class="datos-compra-titulo">DETALLES DEL PEDIDO</p>
+            <table class="datos-compra-tabla">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Total de la orden</td>
+                        <td>$3640</td>
+                    </tr>
+                    <tr>
+                        <td>Costo de envío</td>
+                        <td>$320</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>

@@ -1,5 +1,4 @@
 const express = require('express');
-const usuario_controller = require('../controllers/usuarioController');
 const app = express();
 const {isLogin} = require('../middlewares/auth');
 
@@ -7,9 +6,7 @@ const {isLogin} = require('../middlewares/auth');
 app.post('/registro', passport.authenticate('local.registro',{
     successRedirect:'/',
     failureRedirect:'/registro'
-})
-// res.send('peticion recibida');
-)
+}));
 
 //login
 app.post('/login',(req,res,next)=>{

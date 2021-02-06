@@ -1,0 +1,69 @@
+<!-- CONTAINER -->
+<div class="full-container">
+    <section class="navbar-container__mobile">
+        <nav class="navbar-container__mobile__list">
+            <label for="navbar" class="navbar-container__mobile__list__label">
+                <input type="checkbox" id="navbar" class="navbar-input" />
+                <div class="navbar-open">
+                <i class="fas fa-bars"></i>
+                </div>
+                <div class="navbar-close">
+                <i class="fas fa-times"></i>
+                </div>
+                <div class="navbar-contet">
+                <a href="/">Home</a>
+                </div>
+            </label>
+        </nav>
+    </section>
+    <section class="banner-container" id="home">
+        <div class="background-image"></div>
+        <h1 class="banner-title">FARMACIA PROFESIONAL, LA CONSULTA DISPONIBLE</h1>
+    </section>
+    <!-- Inicio quienes somos -->
+    <section class="quienes-somos-container" id="quienes-somos">
+        <h2 class="quienes-somos-title">Quienes somos</h2>
+        <p>Somos una Farmacia Formulista, nuestra pasión y misión es la formulación magistral. Estamos especializados principalmente en dermato cosmiatría, Fitoterapia, Suplementación dietaria, psiquiatría y tratamiento paliativo del dolor. Tenemos laboratorio propio, con equipamiento de primer nivel.</p>
+        <p>Nuestra premisa es individualizar la medicación ajustándola a la necesidad de cada paciente. Y respecto a la nutrición y la estética formulamos los productos a medida del usuario, activos, fragancias, texturas etc.</p>
+        <p>Contamos también con un laboratorio homeopático con una amplia variedad de Tinturas Madre de alta calidad.</p>
+        <p>Destacamos que pueden hacer su pedido por cualquier medio, Whatsapp, telefónico, vía mail, skype y mensaje privado por facebook.</p>
+        <p>Y por supuesto estamos a disposición de cualquier consulta y asesoramiento en forma personal por su Farmacéutica.</p>
+        <div class="quienes-somos-img-container">
+            <div class="img1-container"><img class="quienes-somos-img" src="imagenes/imagen-1.jpg" alt=""></div>
+            <div class="img2-container"><img class="quienes-somos-img" src="imagenes/imagen-2.jpg" alt=""></div>
+            <div class="img3-container"><img class="quienes-somos-img" src="imagenes/imagen-3.jpg" alt=""></div>
+        </div>
+    </section>
+    
+    <!-- Fin quienes somos -->
+    <!-- Inicio que hacemos -->
+    <section class="que-hacemos-container" id="que-hacemos">
+        <h2 class="que-hacemos-title">Que hacemos</h2>
+        <ul class="que-hacemos-list">
+            <a href="laboratorio.html" target="_blank"><li><i class="fas fa-capsules"></i>Laboratorio magistral de Excelencia</li></a>
+            <a href=""><li><i class="fas fa-spa"></i>Homeopatía y Flores de Bach</li></a>
+            <a href=""><li><i class="fab fa-pagelines"></i>Fitoterapia</li></a>
+            <a href=""><li><i class="fas fa-mortar-pestle"></i></i>Cosmética natural</li></a>
+            <a href=""><li><i class="fas fa-spray-can"></i>Dermocosmética</li></a>
+            <a href=""><li><i class="fas fa-running"></i>Nutrición y deportes</li></a>
+        </ul>
+    </section>
+    <!-- Fin que hacemos -->
+    <!-- Inicio Pedidos -->
+    <section class="pedidos-container" id="pedidos">
+        <h2 class="pedidos-title">Pedidos</h2>
+        <form class="pedidos-form" action="" method="post">
+            <input class="pedidos-form-items" type="text" name="name" placeholder="Nombre y apellido"> 
+            <input class="pedidos-form-items" type="number" placeholder="Ingresá tu número telefónico">
+            <input class="pedidos-form-items" type="email" name="_replyto" id="mail" placeholder="Email"> 
+            <input class="pedidos-form-items" type="date"  name="birthday"> 
+            <label class="pedidos-form-items-file-label" for="file"><span class="file">Cargá tu receta</span></label>
+            <span class="file"><input class="pedidos-form-items-file" type="file" id="file" name="file"></span>
+            <textarea name="texto" cols="30" rows="10"></textarea>
+            <input class="pedidos-form-button" class="button-submit" type="submit" id="enviar">
+        </form>
+    </section>
+    <!-- Fin Pedidos -->
+
+{{!-- icono para acceder al carrito --}}
+<div class="carrito"><a href="carrito.html" target="_blank"><i class="fas fa-shopping-cart"></i></a></div>
