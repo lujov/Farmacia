@@ -345,33 +345,6 @@ a:hover {
     padding: 1%;
     color:  rgb(95, 94, 94);
 }
- 
-/* SKILS */
-
-/*SERVICES*/
-
-/*EXPERIENCE*/
-.experience-container__topics__card__data {
-  padding: 0 0 50px 50px;
-  border-left: 1px solid var(--color-secondary);
-  position: relative;
-}
-
-.experience-container__topics__card__data > i {
-  position: absolute;
-  left: -8px;
-  top: 0;
-}
-
-/* WORKS */
-.works-container__topics__card__mask {
-  background: #6c6ce5;
-  opacity: 0; /*Con esta propiedad le cambiamos la transparencia a nuestas cajas*/
-}
-
-.works-container__topics__card:hover > .works-container__topics__card__mask {
-  opacity: 0.9;
-}
 
 /* FOOTER */
 .footer {
@@ -926,6 +899,30 @@ table{
 
 }
 
+@media (max-width: 656px){
+
+  .banner-title {
+    width: 60%;
+    line-height: 4rem; 
+  }
+}
+
+@media (max-width: 530px){
+
+  .tienda-menu{
+    font-size: 1rem;
+    
+  }
+
+  .tabla-encabezado2{
+    font-size: 0.9rem;
+  }
+
+  tbody{
+    font-size: 0.85rem;
+  }
+}
+
 @media (max-width: 493px){
   .img-logo{
     display: none;
@@ -947,6 +944,20 @@ table{
     height: auto;
     align-self: center;
     margin-top: 35%;
+  }
+
+  .banner-title {
+    width: 45%;
+    line-height: 4rem; 
+  }
+
+  .quienes-somos-img-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img2-container{
+    margin: 2.5% 0 2.5% 0;
   }
   
   /* QUE HACEMOS */
@@ -979,4 +990,86 @@ table{
     width: 10%;
     height: 7%;
   }
+
+  .mapa-google{
+    width: 100%;
+  }
+  
+  .tabla-encabezado2{
+    font-size: 0.8rem;
+  }
+  tbody{
+    font-size: 0.8rem;
+  }
+}
+
+
+@media (max-width: 360px){
+
+  .full-container h2{
+    font-size: 1.55rem;
+  }
+
+  .full-container h3{
+    font-size: 1.3rem;
+  }
+
+  .full-container p{
+    font-size: 0.9rem;
+  }
+
+  .full-container input{
+    font-size: 0.9rem;
+  }
+
+  .lista-1{
+    width: 48%;
+    margin-bottom: 0;
+  }
+
+  .lista-2{
+    width: 48%;
+    margin-bottom: 0;
+  }
+
+  .banner-title {
+    width: 60%;
+    line-height: 4rem; 
+  }
+
+  .carrito{
+    width: 16%;
+    height: 8%;
+  }
+
+  .quienes-somos-container p{
+    line-height: 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .que-hacemos-list a{
+    font-size: 0.95rem;
+  }
+
+  .pedidos-form-button{
+    padding: 3%;
+    font-size: 3rem;
+  }
+
+  .button-submit{
+    font-size: 3rem;
+  }
+
+  .mapa-google{
+    width: 100%;
+  }
+
+  .tabla-encabezado2{
+    font-size: 0.7rem;
+  }
+
+  tbody{
+    font-size: 0.75rem;
+  }
+
 }
