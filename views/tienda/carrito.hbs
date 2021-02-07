@@ -13,33 +13,24 @@
                 </tr>
             </thead>
             <tbody>
+                {{#each carrito}}
                 <tr>
                     <td class="img-carrito-container"><img class="img-prod-carrito" src="imagenes/producto.jpg" alt=""></td>
-                    <td><p>NOMBRE DEL PRODUCTO</p></td>
+                    <td><p>{{nombre}}</p></td>
                     <td>
                         <div class="carrito-cantidad">
-                            <input type="number" id="quantity" name="quantity" min="1" max="10"> 
+                            <input type="number" id="quantity" class="cantidad" name="quantity" onclick="calcularTotal()" min="1" max="10" value="{{cantidad}}"> 
                         </div>
                     </td>
                     <td>
-                        <span class="carrito-precio">$1350</span>
+                        <span class="carrito-precio">${{precio}}</span>
+                        <input type="text" name="precio" class="precio-producto" value="{{precio}}" style="display: none;">
+                        <a href="/tienda/eliminarcarrito/{{id}}" class="btn btn-danger">Eliminar producto</a>
                     </td>
                 </tr>
-                <tr>
-                <td class="img-carrito-container"><img class="img-prod-carrito" src="imagenes/producto.jpg" alt=""></td>
-                <td><p>NOMBRE DEL PRODUCTO</p></td>
-                <td>
-                    <div class="carrito-cantidad">
-                            <input type="number" id="quantity" name="quantity" min="1" max="10"> 
-                    </div>
-                </td>
-                <td>
-                    <span class="carrito-precio">$1350</span>
-                </td>
-            </tr>
+                {{/each}}
             </tbody>
-            <tfoot>
-            </tfoot>
+            <tfoot></tfoot>
         </table>
         <div class="datos-compra">
             <p class="datos-compra-titulo">DETALLES DEL PEDIDO</p>
@@ -53,13 +44,16 @@
                 <tbody>
                     <tr>
                         <td>Total de la orden</td>
-                        <td>$3640</td>
+                        <td id="total-orden"></td>
                     </tr>
-                    <tr>
+                    {{!-- <tr>
                         <td>Costo de envío</td>
                         <td>$320</td>
-                    </tr>
+                    </tr> --}}
                 </tbody>
             </table>
         </div>
     </section>
+
+{{!-- JS --}}
+<script src="/js/carrito.js"></script>
