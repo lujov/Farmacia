@@ -67,15 +67,13 @@ router.get('/carrito', usuarioLogueado, async (req, res) => {
 });
 
 //agregar producto al carrito
-router.post('/agregarcarrito', async (req, res) => {
+router.post('/agregarcarrito',usuarioLogueado, async (req, res) => {
     const {nombre, precio,cantidad} = req.body;
-    const precioTotal = 0;
     const productoCarrito = {
         nombre,
         precio,
-        cantidad: cantidad+1,
+        cantidad,
         user_id: req.user.id_usuario
-
     };
     await pool.query('INSERT INTO t_carrito set ?', [productoCarrito]);
     req.flash('success','Producto guardado correctamente');
@@ -89,5 +87,40 @@ router.get('/eliminarcarrito/:id', async (req, res) => {
     req.flash('success','Producto eliminado con exito');
     res.redirect('/tienda/carrito');
 });
+
+// editar cantidad de pedido en el carrito
+router.post('/editarcantidad/:id', async (req, res) => {
+    const { id } = req.params;
+    const { cantidad } = req.body; 
+    const cantidadCambiada = {
+        cantidad
+    }
+    await pool.query('UPDATE t_carrito set ? WHERE id = ? AND user_id = ?', [cantidadCambiada, id,req.user.id_usuario]);
+    req.flash('success','Producto editado con exito');
+    res.redirect('/tienda/carrito');
+});
+
+//enviar orden de compra
+router.post('/comprar',usuarioLogueado, async (req, res) => {
+    const venta = await pool.query('SELECT * FROM t_carrito WHERE user_id = ?', [req.user.id_usuario]);
+    
+    // for (let index = 0; index < venta.length; index++) {
+    //     // await pool.query('INSERT INTO t_ventas set ?', [venta[index]]);
+    //     venta[index] = req.body;
+    //     console.log(venta[index])
+    // }
+
+    req.flash('success','Orden de compra recibida');
+    res.redirect('/tienda/carrito');
+});
+
+// router.get('/comprar',usuarioAdmin,(req,res) => {
+//     res.render('tienda');
+// });
+
+// router.get('/pedidos', usuarioLogueado, async (req, res) => {
+//     const carrito = await pool.query('SELECT * FROM t_carrito WHERE user_id = ?', [req.user.id_usuario]);
+//     res.render('tienda/carrito', { carrito });
+// });
 
 module.exports = router;

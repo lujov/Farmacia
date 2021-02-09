@@ -19,7 +19,10 @@
                     <td><p>{{nombre}}</p></td>
                     <td>
                         <div class="carrito-cantidad">
-                            <input type="number" id="quantity" class="cantidad" name="quantity" onclick="calcularTotal()" min="1" max="10" value="{{cantidad}}"> 
+                            <form action="/tienda/editarcantidad/{{id}}" method="POST">
+                                <input type="number" id="cantidad" class="cantidad" name="cantidad" min="1" max="10" value="{{cantidad}}">
+                                <button type="submit" class="btn btn-warning">Actualizar cantidad</button>
+                            </form>
                         </div>
                     </td>
                     <td>
@@ -46,13 +49,18 @@
                         <td>Total de la orden</td>
                         <td id="total-orden"></td>
                     </tr>
-                    {{!-- <tr>
-                        <td>Costo de envío</td>
-                        <td>$320</td>
-                    </tr> --}}
                 </tbody>
             </table>
         </div>
+        <form action="/tienda/comprar" method="POST">
+            {{#each carrito}}
+                <input type="text" name="nombre" id="nombre" value="{{nombre}}" style="display: none;">
+                <input type="text" name="precio" id="precio" value="{{precio}}" style="display: none;">
+                <input type="text" name="cantidad" id="cantidad" value="{{cantidad}}" style="display: none;">
+                <input type="text" name="id" id="id" value="{{id}}" style="display: none;">
+            {{/each}}
+            <button class="boton-productos" type="submit">Agregar al carrito</button>
+        </form>
     </section>
 
 {{!-- JS --}}
