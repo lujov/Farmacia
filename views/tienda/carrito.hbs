@@ -13,33 +13,27 @@
                 </tr>
             </thead>
             <tbody>
+                {{#each carrito}}
                 <tr>
                     <td class="img-carrito-container"><img class="img-prod-carrito" src="imagenes/producto.jpg" alt=""></td>
-                    <td><p>NOMBRE DEL PRODUCTO</p></td>
+                    <td><p>{{nombre}}</p></td>
                     <td>
                         <div class="carrito-cantidad">
-                            <input type="number" id="quantity" name="quantity" min="1" max="10"> 
+                            <form action="/tienda/editarcantidad/{{id}}" method="POST">
+                                <input type="number" id="cantidad" class="cantidad" name="cantidad" min="1" max="10" value="{{cantidad}}">
+                                <button type="submit" class="btn btn-warning">Actualizar cantidad</button>
+                            </form>
                         </div>
                     </td>
                     <td>
-                        <span class="carrito-precio">$1350</span>
+                        <span class="carrito-precio">${{precio}}</span>
+                        <input type="text" name="precio" class="precio-producto" value="{{precio}}" style="display: none;">
+                        <a href="/tienda/eliminarcarrito/{{id}}" class="btn btn-danger">Eliminar producto</a>
                     </td>
                 </tr>
-                <tr>
-                <td class="img-carrito-container"><img class="img-prod-carrito" src="imagenes/producto.jpg" alt=""></td>
-                <td><p>NOMBRE DEL PRODUCTO</p></td>
-                <td>
-                    <div class="carrito-cantidad">
-                            <input type="number" id="quantity" name="quantity" min="1" max="10"> 
-                    </div>
-                </td>
-                <td>
-                    <span class="carrito-precio">$1350</span>
-                </td>
-            </tr>
+                {{/each}}
             </tbody>
-            <tfoot>
-            </tfoot>
+            <tfoot></tfoot>
         </table>
         <div class="datos-compra">
             <p class="datos-compra-titulo">DETALLES DEL PEDIDO</p>
@@ -53,13 +47,21 @@
                 <tbody>
                     <tr>
                         <td>Total de la orden</td>
-                        <td>$3640</td>
-                    </tr>
-                    <tr>
-                        <td>Costo de envío</td>
-                        <td>$320</td>
+                        <td id="total-orden"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        <form action="/tienda/comprar" method="POST">
+            {{#each carrito}}
+                <input type="text" name="nombre" id="nombre" value="{{nombre}}" style="display: none;">
+                <input type="text" name="precio" id="precio" value="{{precio}}" style="display: none;">
+                <input type="text" name="cantidad" id="cantidad" value="{{cantidad}}" style="display: none;">
+                <input type="text" name="id" id="id" value="{{id}}" style="display: none;">
+            {{/each}}
+            <button class="boton-productos" type="submit">Agregar al carrito</button>
+        </form>
     </section>
+
+{{!-- JS --}}
+<script src="/js/carrito.js"></script>

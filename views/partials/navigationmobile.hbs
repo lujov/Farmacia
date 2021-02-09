@@ -1,0 +1,40 @@
+{{!-- NAVBAR MOBILE --}}
+<section class="navbar-container__mobile">
+    <nav class="navbar-container__mobile__list">
+        <label for="navbar" class="navbar-container__mobile__list__label">
+            <input type="checkbox" id="navbar" class="navbar-input" />
+            <div class="navbar-open">
+            <i class="fas fa-bars"></i>
+            </div>
+            <div class="navbar-close">
+            <i class="fas fa-times"></i>
+            </div>
+            <div class="navbar-contet">
+                <div class="navbar-mobile-container_1">
+                    <ul class="lista-1">
+                        <li class="li-1"><a href="/">Home</a></li>
+                        <li class="li-1"><a href="/#quienes-somos">Quienes somos</a></li>
+                        <li class="li-1"><a href="/#que-hacemos">Que hacemos</a></li>
+                        {{!-- <li class="li-1"><a href="#works">Noticias</a></li> --}}
+                        <li class="li-1"><a href="/#pedidos">Pedidos</a></li>
+                        <li class="li-1"><a href="/#contacto">Contacto</a></li>
+                    </ul>
+                    <div class="navbar-divisor"></div>
+                    <ul class="lista-2">
+                        <li class="li-2"><a href="/tienda" target="_blank">Tienda online</a></li>
+                        {{#if user}}
+                            <li class="li-2"><a href="/perfil">Perfil</a></li>
+                            <li class="li-2"><a href="/cerrarsesion">Cerrar sesión</a></li>
+                        {{else}}
+                            <li class="li-2"><a href="" data-toggle="modal" data-target="#exampleModal">Registrarse</a></li>
+                            <li class="li-2"><a href="" data-toggle="modal" data-target="#exampleInicio">Iniciar sesión</a></li>
+                        {{/if}}
+                        <img class="img-logo-lista-2" src="imagenes/Logo Etiquetas 3.png" alt="logo">
+                    </ul>
+                </div>
+                <!-- <div class="navbar-divisor"></div> -->
+                <img class="img-logo" src="imagenes/Logo Etiquetas 3.png" alt="logo">
+            </div>
+        </label>
+    </nav>
+</section>

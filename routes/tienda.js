@@ -1,6 +1,7 @@
 // --- SECCION PARA CREAR ENLACES ---
 const express = require('express');
 const router = express.Router();
+const { usuarioLogueado, usuarioNoLogueado, usuarioAdmin } = require('../lib/auth');
 
 // conexion con base de datos
 const pool = require('../database');
@@ -12,8 +13,8 @@ router.get('/', async (req, res) => {
 });
 
 // ruta para agregar productos a la base de datos
-router.get('/agregarproducto',(req,res) => {
-    res.render('tienda/agregarproducto')
+router.get('/agregarproducto',usuarioAdmin,(req,res) => {
+    res.render('tienda/agregarproducto');
 });
 
 router.post('/agregarproducto', async (req, res) => {
@@ -30,7 +31,7 @@ router.post('/agregarproducto', async (req, res) => {
 });
 
 // ruta para eliminar productos
-router.get('/eliminar/:id', async (req, res) => {
+router.get('/eliminar/:id',usuarioAdmin, async (req, res) => {
     const { id } = req.params;
     await pool.query('DELETE FROM t_productos WHERE ID = ?', [id]);
     req.flash('success','Producto eliminado con exito');
@@ -38,7 +39,7 @@ router.get('/eliminar/:id', async (req, res) => {
 });
 
 // ruta para ver el producto a editar
-router.get('/editar/:id', async (req, res) => {
+router.get('/editar/:id',usuarioAdmin, async (req, res) => {
     const { id } = req.params;
     const tienda = await pool.query('SELECT * FROM t_productos WHERE id = ?', [id]);
     res.render('tienda/editarproducto', {tienda: tienda[0]});
@@ -59,9 +60,67 @@ router.post('/editarproducto/:id', async (req, res) => {
     res.redirect('/tienda');
 });
 
-router.get('/carrito', async (req, res) => {
-    const tienda = await pool.query('SELECT * FROM t_productos');
-    res.render('tienda/carrito', { tienda });
+//ruta para acceder al carrito
+router.get('/carrito', usuarioLogueado, async (req, res) => {
+    const carrito = await pool.query('SELECT * FROM t_carrito WHERE user_id = ?', [req.user.id_usuario]);
+    res.render('tienda/carrito', { carrito });
 });
+
+//agregar producto al carrito
+router.post('/agregarcarrito',usuarioLogueado, async (req, res) => {
+    const {nombre, precio,cantidad} = req.body;
+    const productoCarrito = {
+        nombre,
+        precio,
+        cantidad,
+        user_id: req.user.id_usuario
+    };
+    await pool.query('INSERT INTO t_carrito set ?', [productoCarrito]);
+    req.flash('success','Producto guardado correctamente');
+    res.redirect('/tienda');
+});
+
+//eliminar producto del carrito
+router.get('/eliminarcarrito/:id', async (req, res) => {
+    const { id } = req.params;
+    await pool.query('DELETE FROM t_carrito WHERE id = ?', [id]);
+    req.flash('success','Producto eliminado con exito');
+    res.redirect('/tienda/carrito');
+});
+
+// editar cantidad de pedido en el carrito
+router.post('/editarcantidad/:id', async (req, res) => {
+    const { id } = req.params;
+    const { cantidad } = req.body; 
+    const cantidadCambiada = {
+        cantidad
+    }
+    await pool.query('UPDATE t_carrito set ? WHERE id = ? AND user_id = ?', [cantidadCambiada, id,req.user.id_usuario]);
+    req.flash('success','Producto editado con exito');
+    res.redirect('/tienda/carrito');
+});
+
+//enviar orden de compra
+router.post('/comprar',usuarioLogueado, async (req, res) => {
+    const venta = await pool.query('SELECT * FROM t_carrito WHERE user_id = ?', [req.user.id_usuario]);
+    
+    // for (let index = 0; index < venta.length; index++) {
+    //     // await pool.query('INSERT INTO t_ventas set ?', [venta[index]]);
+    //     venta[index] = req.body;
+    //     console.log(venta[index])
+    // }
+
+    req.flash('success','Orden de compra recibida');
+    res.redirect('/tienda/carrito');
+});
+
+// router.get('/comprar',usuarioAdmin,(req,res) => {
+//     res.render('tienda');
+// });
+
+// router.get('/pedidos', usuarioLogueado, async (req, res) => {
+//     const carrito = await pool.query('SELECT * FROM t_carrito WHERE user_id = ?', [req.user.id_usuario]);
+//     res.render('tienda/carrito', { carrito });
+// });
 
 module.exports = router;

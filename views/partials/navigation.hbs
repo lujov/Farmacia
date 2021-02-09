@@ -1,22 +1,27 @@
-<!-- NAVBAR -->
+<!-- NAVBAR DESKTOP -->
 <section class="navbar-container__desktop">
     <img class="img-logo" src="/imagenes/Logo Etiquetas 3.png" alt="logo">
     <ul class="lista-1">
         <li class="li-1"><a href="/">Home</a></li>
-        <li class="li-1"><a href="/#quienes-somos">Quienes somos</a></li>
-        <li class="li-1"><a href="/#que-hacemos">Que hacemos</a></li>
+        <li class="li-1"><a href="/#quienes-somos">Quienes Somos</a></li>
+        <li class="li-1"><a href="/#que-hacemos">Que Hacemos</a></li>
         {{!-- <li class="li-1"><a href="#works">Noticias</a></li> --}}
         <li class="li-1"><a href="/#pedidos">Pedidos</a></li>
         <li class="li-1"><a href="/#contacto">Contacto</a></li>
     </ul>
     <div class="navbar-divisor"></div>
     <ul class="lista-2">
-        <li class="li-2"><a href="/tienda">Tienda online</a></li>
+        <li class="li-2"><a href="/tienda">Tienda Online</a></li>
+
+        {{!-- funciones que aparecen solo al admin --}}
+        {{#if user.admin}}
+            <li class="li-2"><a href="/tienda/agregarproducto">Agregar Producto</a></li>
+        {{/if}}
 
         {{!-- estas funciones solo aparecen cuando no hay un usuario logueado --}}
         {{#if user}}
             <li class="li-2"><a href="/perfil">Perfil</a></li>
-            <li class="li-2"><a href="/cerrarsesion">Cerrar sesión</a></li>
+            <li class="li-2"><a href="/cerrarsesion">Cerrar Sesión</a></li>
         {{else}}
             <li class="li-2"><a href="" data-toggle="modal" data-target="#exampleModal">Registrarse</a></li>
             <li class="li-2"><a href="" data-toggle="modal" data-target="#exampleInicio">Iniciar sesión</a></li>
@@ -37,25 +42,25 @@
             <div class="modal-body">
                 <form class="agregar-produc-form" action="/registro" method="POST">
                     <label for="name">Nombre y apellido:</label><br>
-                    <input class="input-modal" type="text" id="nombre-apellido" name="nombre" autofocus><br>
+                    <input class="input-modal" type="text" id="nombre-apellido" name="nombre" autofocus required><br>
 
                     <label for="contrasena">Contraseña:</label><br>
-                    <input class="input-modal" type="password" id="constrasena" name="contrasena"><br>
+                    <input class="input-modal" type="password" id="constrasena" name="contrasena" required><br>
 
                     <label for="confirm-contrasena">Confirmar contraseña:</label><br>
-                    <input class="input-modal" type="password" id="confirm-constrasena" name="confirm-contrasena"><br>
+                    <input class="input-modal" type="password" id="confirm-constrasena" name="confirm-contrasena" required><br>
                 
                     <label for="telefono">Telefono de contacto:</label><br>
-                    <input class="input-modal" type="number" id="telefono" name="telefono"><br>
+                    <input class="input-modal" type="number" id="telefono" name="telefono" required><br>
 
                     <label for="direccion">Dirección:</label><br>
-                    <input class="input-modal" type="text" id="direccion" name="direccion"><br>
+                    <input class="input-modal" type="text" id="direccion" name="direccion" required><br>
                 
                     <label for="mail">Mail:</label><br>
-                    <input class="input-modal" type="text" id="mail" name="mail"><br>
+                    <input class="input-modal" type="mail" id="mail" name="mail" required><br>
 
                     <label for="dni">DNI:</label><br>
-                    <input class="input-modal" type="number" id="dni" name="dni"><br>
+                    <input class="input-modal" type="number" id="dni" name="dni" required><br>
 
                     <span id="error-modal"></span>
                     </div>

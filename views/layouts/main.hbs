@@ -16,7 +16,8 @@
     {{> navigation}}
 
         <div class="full-container">
-            
+            {{> navigationmobile}}
+
             {{> mensajes}}
 
             {{{ body }}}
@@ -24,6 +25,11 @@
             {{> footer}}
         </div>
     </div>
+
+{{!-- icono para acceder al carrito --}}
+{{#if user}}
+    <div class="carrito"><a href="/tienda/carrito" target="_blank"><i class="fas fa-shopping-cart"></i></a></div>
+{{/if}}
 
 <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
