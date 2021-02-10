@@ -767,6 +767,7 @@ h3 {
 }
 
 table{
+  box-sizing: border-box;
   width: 100%;
   height: auto;
   color: rgb(95, 94, 94) ;
@@ -791,6 +792,26 @@ table{
   height: auto;
 }
 
+.carrito-cantidad-form{
+  display: flex;
+}
+
+.cantidad{
+  margin-right: 4%;
+}
+
+.carrito-precio-container{
+  display: flex;
+}
+
+.carrito-precio{
+  margin-right: 4%;
+}
+
+.carrito-precio-container a{
+  color: white;
+}
+
 .final-tabla{
   width: 100%;
   display: flex;
@@ -811,6 +832,21 @@ table{
 .datos-compra-tabla{
   margin-left: 10%;
   margin-top: 1%;
+}
+
+.boton-comprar-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.boton-comprar{
+  text-align: center;
+  width: 98%;
+  height: auto;
+  padding: 1%;
+  background-color: var(--color-secondary);
+  margin: 1% 0 2% 0;
 }
 
 /* PERFIL */
@@ -1074,6 +1110,33 @@ table{
     height: 7%;
   }
 
+  .tabla-encabezado2 th{
+    font-size: 0.9rem;
+  }
+
+  .table{
+    font-size: 1rem;
+  }
+
+  /* .table td{
+    font-size: 0.5rem;
+  } */
+
+  .carrito-cantidad-form .btn-warning{
+    font-size: 0.9rem;
+    white-space: normal;
+  }
+
+  .carrito-precio-container .btn-danger{
+    font-size: 0.9rem;
+    white-space: normal;
+  }
+
+  .cantidad{
+    font-size: 0.9rem;
+    width: 40%;
+  }
+
 }
 
 @media (max-width: 656px){
@@ -1177,6 +1240,19 @@ table{
   }
   tbody{
     font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 410px){
+  .carrito-cantidad-form .btn-warning{
+    padding: 0.5% 0.05%;
+    font-size: 0.78rem;
+    
+  }
+
+  .carrito-precio-container .btn-danger{
+    font-size: 0.78rem;
+    
   }
 }
 
