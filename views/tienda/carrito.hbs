@@ -6,8 +6,8 @@
         <table class="table" id="table">
             <thead class="tabla-encabezado">
                 <tr class="tabla-encabezado2">
+                    {{!-- <th>PRODUCTO</th> --}}
                     <th>PRODUCTO</th>
-                    <th>DESCRIPCION</th>
                     <th>CANTIDAD</th>
                     <th>PRECIO</th>
                 </tr>
@@ -15,17 +15,17 @@
             <tbody>
                 {{#each carrito}}
                 <tr>
-                    <td class="img-carrito-container"><img class="img-prod-carrito" src="imagenes/producto.jpg" alt=""></td>
+                    {{!-- <td class="img-carrito-container"><img class="img-prod-carrito" src="imagenes/producto.jpg" alt=""></td> --}}
                     <td><p>{{nombre}}</p></td>
                     <td>
                         <div class="carrito-cantidad">
-                            <form action="/tienda/editarcantidad/{{id}}" method="POST">
+                            <form class="carrito-cantidad-form" action="/tienda/editarcantidad/{{id}}" method="POST">
                                 <input type="number" id="cantidad" class="cantidad" name="cantidad" min="1" max="10" value="{{cantidad}}">
                                 <button type="submit" class="btn btn-warning">Actualizar cantidad</button>
                             </form>
                         </div>
                     </td>
-                    <td>
+                    <td class="carrito-precio-container">
                         <span class="carrito-precio">${{precio}}</span>
                         <input type="text" name="precio" class="precio-producto" value="{{precio}}" style="display: none;">
                         <a href="/tienda/eliminarcarrito/{{id}}" class="btn btn-danger">Eliminar producto</a>
@@ -52,14 +52,14 @@
                 </tbody>
             </table>
         </div>
-        <form action="/tienda/comprar" method="POST">
+        <form class="boton-comprar-container" action="/tienda/comprar" method="POST">
             {{#each carrito}}
                 <input type="text" name="nombre" id="nombre" value="{{nombre}}" style="display: none;">
                 <input type="text" name="precio" id="precio" value="{{precio}}" style="display: none;">
                 <input type="text" name="cantidad" id="cantidad" value="{{cantidad}}" style="display: none;">
                 <input type="text" name="id" id="id" value="{{id}}" style="display: none;">
             {{/each}}
-            <button class="boton-productos" type="submit">Agregar al carrito</button>
+            <button class="boton-productos boton-comprar" type="submit">Comprar</button>
         </form>
     </section>
 
