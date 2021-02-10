@@ -63,7 +63,11 @@ router.post('/editarproducto/:id', async (req, res) => {
 //ruta para acceder al carrito
 router.get('/carrito', usuarioLogueado, async (req, res) => {
     const carrito = await pool.query('SELECT * FROM t_carrito WHERE user_id = ?', [req.user.id_usuario]);
-    res.render('tienda/carrito', { carrito });
+    let total = 0;
+    for (let index = 0; index < carrito.length; index++) {
+        total = total + (carrito[index].cantidad*carrito[index].precio);
+    }
+    res.render('tienda/carrito', { carrito,total });
 });
 
 //agregar producto al carrito
@@ -111,10 +115,26 @@ router.post('/comprar',usuarioLogueado, async (req, res) => {
     res.redirect('/tienda/carrito');
 });
 
-// router.get('/comprar',usuarioAdmin,(req,res) => {
-//     res.render('tienda');
-// });
+// pedidos recibidos para el admin
+router.get('/ventas', usuarioAdmin, async (req, res) => {
+    const venta = await pool.query('SELECT * FROM t_ventas');
 
+    let total = 0;
+    for (let index = 0; index < venta.length; index++) {
+        total = total + (venta[index].cantidad*venta[index].precio);
+    }
+    res.render('tienda/ventas', { venta });
+});
+
+//marcar producto como entregado
+router.get('/entregarventa/:id', async (req, res) => {
+    const { id } = req.params;
+    await pool.query('DELETE FROM t_ventas WHERE id = ?', [id]);
+    req.flash('success','Producto entregado con exito');
+    res.redirect('/tienda/ventas');
+});
+
+// pedidos hechos por el usuario
 // router.get('/pedidos', usuarioLogueado, async (req, res) => {
 //     const carrito = await pool.query('SELECT * FROM t_carrito WHERE user_id = ?', [req.user.id_usuario]);
 //     res.render('tienda/carrito', { carrito });

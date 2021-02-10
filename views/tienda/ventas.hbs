@@ -1,0 +1,36 @@
+<h1 class="tienda-title">CARRITO <i class="fas fa-shopping-cart"></i></h1>
+    <div class="carrito-subtitulo">
+        <h2>TUS PRODUCTOS</h2>
+    </div>
+    <section class="section-tabla-carrito">
+        <table class="table" id="table">
+            <thead class="tabla-encabezado">
+                <tr class="tabla-encabezado2">
+                    <th>USUARIO</th>
+                    <th>DESCRIPCION</th>
+                    <th>CANTIDAD</th>
+                    <th>PRECIO</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each venta}}
+                <tr>
+                    <td>
+                        <p>{{user_id}}</p>
+                    </td>
+                    <td>
+                        <span class="carrito-precio">{{nombre}}</span>
+                    </td>
+                    <td>
+                        <span class="carrito-precio">{{cantidad}}</span>
+                    </td>
+                    <td>
+                        <span class="carrito-precio">${{precio}}</span>
+                        <a href="/tienda/entregarventa/{{id}}" class="btn btn-danger">Entregar venta</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+            <tfoot></tfoot>
+        </table>      
+    </section>
