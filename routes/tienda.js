@@ -103,13 +103,10 @@ router.post('/editarcantidad/:id', async (req, res) => {
 //enviar orden de compra
 router.post('/comprar',usuarioLogueado, async (req, res) => {
     const venta = await pool.query('SELECT * FROM t_carrito WHERE user_id = ?', [req.user.id_usuario]);
-    
-    // for (let index = 0; index < venta.length; index++) {
-    //     // await pool.query('INSERT INTO t_ventas set ?', [venta[index]]);
-    //     venta[index] = req.body;
-    //     console.log(venta[index])
-    // }
-
+    for (let index = 0; index < venta.length; index++) {
+        await pool.query('INSERT INTO t_ventas set ?', [venta[index]]);
+    }
+    await pool.query('DELETE FROM t_carrito WHERE user_id = ?', [req.user.id_usuario]);
     req.flash('success','Orden de compra recibida');
     res.redirect('/tienda/carrito');
 });
