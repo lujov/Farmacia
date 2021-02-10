@@ -968,6 +968,21 @@ table{
   margin-top: 0;
 }
 
+/* VENTAS */
+
+.ventas-btncont{
+  display: flex;
+}
+
+.ventas-btncont a{
+  color: white;
+}
+
+.ventas-btncont .btn-danger{
+  padding: 1% 1%;
+}
+btn-danger
+
 /* RESPONSIVE */
 @media (max-width: 1216px){
   .banner-title{
@@ -1161,6 +1176,16 @@ table{
   tbody{
     font-size: 0.85rem;
   }
+
+  .ventas-btncont .btn-danger{
+    font-size: 0.9rem;
+    white-space: normal;
+    margin-left: 4%;
+  }
+
+  .tabla-encabezado2 th{
+    font-size: 0.85rem;
+  }
 }
 
 @media (max-width: 493px){
@@ -1239,8 +1264,24 @@ table{
     font-size: 0.8rem;
   }
   tbody{
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
+
+  .ventas-btncont .btn-danger{
+    font-size: 0.8rem;
+    
+  }
+
+  tr .ventas-btncont{
+    padding: 0;
+  }
+
+  .tabla-encabezado2 th{
+    font-size: 0.75rem;
+  
+  }
+
+
 }
 
 @media (max-width: 410px){
