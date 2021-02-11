@@ -22,9 +22,16 @@
                     <div class="navbar-divisor"></div>
                     <ul class="lista-2">
                         <li class="li-2"><a href="/tienda" target="_blank">Tienda online</a></li>
+                        {{!-- funciones que aparecen solo al admin --}}
+                        {{#if user.admin}}
+                            <li class="li-2"><a href="/tienda/agregarproducto">Agregar Producto</a></li>
+                            <li class="li-2"><a href="/tienda/ventas">Ventas</a></li>
+                        {{/if}}
+
+                        {{!-- estas funciones solo aparecen cuando no hay un usuario logueado --}}
                         {{#if user}}
                             <li class="li-2"><a href="/perfil">Perfil</a></li>
-                            <li class="li-2"><a href="/cerrarsesion">Cerrar sesión</a></li>
+                            <li class="li-2"><a href="/cerrarsesion">Cerrar Sesión</a></li>
                         {{else}}
                             <li class="li-2"><a href="" data-toggle="modal" data-target="#exampleModal">Registrarse</a></li>
                             <li class="li-2"><a href="" data-toggle="modal" data-target="#exampleInicio">Iniciar sesión</a></li>
@@ -36,5 +43,5 @@
                 <img class="img-logo" src="imagenes/Logo Etiquetas 3.png" alt="logo">
             </div>
         </label>
-    </nav>
+    </nav>npx no
 </section>
