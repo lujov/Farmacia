@@ -7,6 +7,7 @@ const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
 const { database } = require('./keys');
 const passport = require('passport');
+const PORT = process.env.PORT || 3306;
 // const {isLogin} = require('./middlewares/auth');
 // const usuariosRouter = require('./routes/usuarios');
 
@@ -59,6 +60,10 @@ app.use('/tienda', require('./routes/tienda'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // PUERTO
-app.listen(app.get('port'),()=>{
-    console.log('escuchando en el puerto 3306');
+app.listen(PORT,()=>{
+  console.log('Servidor corriendo en puerto ${PORT}');
 });
+
+// app.listen(app.get('port'),()=>{
+//     console.log('escuchando en el puerto 3306');
+// });
