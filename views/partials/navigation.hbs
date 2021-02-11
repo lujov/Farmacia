@@ -16,7 +16,7 @@
         {{!-- funciones que aparecen solo al admin --}}
         {{#if user.admin}}
             <li class="li-2"><a href="/tienda/agregarproducto">Agregar Producto</a></li>
-            <li class="li-2"><a href="/tienda/ventas">Pedidos</a></li>
+            <li class="li-2"><a href="/tienda/ventas">Ventas</a></li>
         {{/if}}
 
         {{!-- estas funciones solo aparecen cuando no hay un usuario logueado --}}
@@ -48,8 +48,8 @@
                     <label for="contrasena">Contraseña:</label><br>
                     <input class="input-modal" type="password" id="constrasena" name="contrasena" required><br>
 
-                    <label for="confirm-contrasena">Confirmar contraseña:</label><br>
-                    <input class="input-modal" type="password" id="confirm-constrasena" name="confirm-contrasena" required><br>
+                    <label for="confirmarContrasena">Confirmar contraseña:</label><br>
+                    <input class="input-modal" type="password" id="confirm-constrasena" name="confirmarContrasena" required><br>
                 
                     <label for="telefono">Telefono de contacto:</label><br>
                     <input class="input-modal" type="number" id="telefono" name="telefono" required><br>
