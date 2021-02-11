@@ -982,6 +982,11 @@ table{
   padding: 1% 1%;
 }
 
+.btn-entrega:hover{
+  background-color: var(--color-terciary);
+  color: grey;
+}
+
 /* RESPONSIVE */
 @media (max-width: 1216px){
   .banner-title{
