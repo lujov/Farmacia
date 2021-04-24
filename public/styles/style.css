@@ -314,36 +314,77 @@ a:hover {
 
 }
 
+/* .input-modal{
+  border: solid 1px  rgb(80, 80, 80); ;
+  outline: none;
+  transition: border-bottom 0.5s ease-in-out;
+  border-radius: 2px;
+}
+
+.input-modal:focus {
+border-bottom: solid var(--color-secondary) 3px;
+} */
+
 .pedidos-form-items {
-    margin-bottom: 1%;
-    border: solid var(--color-secondary) 1px;
-    border-radius: 5px;
+  margin-bottom: 1%;
+  border: solid 1px  rgb(80, 80, 80); 
+  border-radius: 5px;
+  outline: none;
+  transition: border-bottom 0.5s ease-in-out;
+}
+
+.pedidos-form-items:focus {
+  border-bottom: solid var(--color-secondary) 3px;
 }
 
 .pedidos-form-items-file-label {
-    background-color: var(--color-secondary);
-    width: fit-content;
-    cursor: pointer;
-    padding: 1%;
-    border-radius: 5px;
-    margin-bottom: 1%;
-    color: rgb(95, 94, 94);
+  background-color: var(--color-secondary);
+  width: fit-content;
+  cursor: pointer;
+  padding: 1%;
+  border-radius: 5px;
+  margin-bottom: 1%;
+  color: rgb(95, 94, 94);
 }
 
 .pedidos-form-items-file {
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    }
+  border: solid 1px  rgb(80, 80, 80);
+  /* border: solid 1px var(--color-secondary); */
+  width: 100%;
+  cursor: pointer;
+  padding: 0.5%;
+  border-radius: 5px;
+  margin-bottom: 1%;
+  /* color: rgb(95, 94, 94); */
+  color: #b69588;
+}
+
+.pedidos-form textarea{
+  border: solid 1px  rgb(80, 80, 80); 
+  border-radius: 5px;
+  outline: none;
+  transition: border-bottom 0.5s ease-in-out;
+}
+
+.pedidos-form textarea:focus{
+  border-bottom: solid var(--color-secondary) 3px;
+}
 
 .pedidos-form-button {
-    border-radius: 5px;
-    border: none;
-    background-color: var(--color-secondary);
-    width: fit-content;
-    margin-top: 1%;
-    padding: 1%;
-    color:  rgb(95, 94, 94);
+  border-radius: 5px;
+  border: solid 2px var(--color-secondary);
+  background-color: var(--color-primary);
+  width: fit-content;
+  margin-top: 1%;
+  padding: 1%;
+  /* color:  rgb(95, 94, 94); */
+  color: #b69588;
+  cursor: pointer;
+}
+
+.pedidos-form-button:hover{
+  background-color: var(--color-secondary);
+  color:rgb(95, 94, 94);
 }
 
 /* FOOTER */
@@ -646,12 +687,42 @@ h3 {
   margin-bottom: 1%;
 }
 
-.tienda-menu{
+/* navbar bootstrap */
+
+.navbar .navbar-brand:hover{
+  transform: scale(1.1);
+  color: white;
+  
+}
+
+.navbar-light{
+  background-color: var(--color-secondary);
+  color: rgb(80, 80, 80);
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.btn-outline-secondary{
+  border: var(--color-primary) 2px solid;
+  color: var(--color-primary);
+}
+
+.btn-outline-secondary:hover{
+  background-color: var(--color-primary);
+  border: var(--color-primary) 2px solid;
+  color:  rgb(80, 80, 80);
+}
+/* .btn-outline-success:visited{
+  background-color: var(--color-primary);
+  border: #f8e9e4 3px solid;
+} */
+
+/* .tienda-menu{
   width: 100%;
   border: 5px solid var(--color-secondary);
   background-color: var(--color-secondary);
   margin-bottom: 2%;
-}
+} */
 
 #tienda-productos{
   padding: 2%;
