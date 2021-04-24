@@ -60,10 +60,10 @@ app.use('/tienda', require('./routes/tienda'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // PUERTO
-app.listen(PORT,()=>{
-  console.log('Servidor corriendo en puerto ${PORT}');
-});
-
-// app.listen(app.get('port'),()=>{
-//     console.log('escuchando en el puerto 3306');
+// app.listen(PORT,()=>{
+//   console.log('Servidor corriendo en puerto ${PORT}');
 // });
+
+app.listen(app.get('port'),()=>{
+    console.log('escuchando en el puerto 3306');
+});
